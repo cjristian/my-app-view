@@ -9,14 +9,13 @@ async function seedUsers(client) {
       CREATE TABLE IF NOT EXISTS users (
         id_user UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
         name VARCHAR(100) NOT NULL,
-        nickname VARCHAR(100) NOT NULL UNIQUE,
         last_name VARCHAR(100) NOT NULL,
         email VARCHAR(100) NOT NULL UNIQUE,
         country VARCHAR(100) NULL,
         password TEXT NOT NULL,
+        nickname VARCHAR(100) NOT NULL UNIQUE,
         birthday DATE,
-        password TEXT NOT NULL,
-        gender VARCHAR(10) CHECK (gender IN ('male', 'female', 'other'))
+        gender VARCHAR(100)
       );
     `;
     console.log(`Created "users" table`);
