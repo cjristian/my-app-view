@@ -14,8 +14,8 @@ async function seedUsers(client) {
         country VARCHAR(100) NULL,
         password TEXT NOT NULL,
         nickname VARCHAR(100) NOT NULL UNIQUE,
-        birthday DATE,
-        gender VARCHAR(100)
+        birthday DATE NULL,
+        gender VARCHAR(100) NULL
       );
     `;
     console.log(`Created "users" table`);
